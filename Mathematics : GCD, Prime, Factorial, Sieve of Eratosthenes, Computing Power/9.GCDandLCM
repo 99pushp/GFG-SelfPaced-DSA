@@ -1,0 +1,22 @@
+class Solution:
+    def lcmAndGcd(self, A , B):
+        l=[]
+        if A<B:
+            a=A
+            b=B
+        else:
+            a=B
+            b=A
+        #GCD
+        gcd=1
+        for i in range(a+1,1,-1):
+            if a%i==0 and b%i==0:
+                gcd=i
+                break
+                
+        #LCM
+        lcm=int((a*b)/gcd)
+        
+        l.append(lcm)
+        l.append(gcd)
+        return l
