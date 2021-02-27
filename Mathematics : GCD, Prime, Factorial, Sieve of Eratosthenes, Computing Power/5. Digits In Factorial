@@ -1,0 +1,16 @@
+import math
+def factorial(n):
+    fac=1
+    if n==0:
+        return 1
+    else:
+        for i in range(1,n+1):
+            fac=fac*i
+    return fac
+def digitsInFactorial(N):
+    
+    
+    
+    f=factorial(N)
+    return math.floor(math.log10(f)+1)
+    # code here
