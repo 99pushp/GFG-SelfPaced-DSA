@@ -1,0 +1,19 @@
+mport math
+class Solution:
+	def quadraticRoots(self, a, b, c):
+        # code here
+        l=[]
+        d=(b*b)-4*a*c
+        if d<0:
+            l.append(-1)
+            return l
+
+        else:
+            x1=math.floor((-b+math.sqrt(d))/(2*a))
+            x2=math.floor((-b-math.sqrt(d))/(2*a))
+            l.append(x1)
+            l.append(x2)
+            l.sort(reverse=True)
+            return l
+            
+            
