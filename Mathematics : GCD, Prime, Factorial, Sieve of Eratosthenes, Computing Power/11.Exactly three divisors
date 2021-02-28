@@ -1,0 +1,42 @@
+he logic behind this is, such numbers can have only three numbers as their divisor and also that include 1 and that number itself resulting into just a single divisor other than number, so we can easily conclude that required are those numbers which are squares of prime numbers so that they can have only three divisors (1, number itself and sqrt(number)). So all primes i, such that i*i is less than equal to N are three-prime numbers.
+
+Now implementation can be better as the constrains are high. Find all the perfect squares less than N (Ofcourse it is sqrt(N) ) and iterate over it to check if its prime or not using seive method in sqrt(i) time (where 'i' is the number you checking prime for and it will be less than equal to sqrt(1e9) ).
+
+Complexity: sqrt(N)*sqrt(sqrt(N))
+Note: We can generate all primes within a set using any sieve method efficiently and then we should all primes i, suct that i*i <=N.
+
+import math
+def prime(x):
+    if x==2:
+        return True
+    for i in range(2,int(math.sqrt(x))+1):
+        if x%i==0:
+            return False
+    return True
+class Solution:
+    def exactly3Divisors(self,N):
+        count=0
+        for i in range(2,int(math.sqrt(N))+1):
+            if prime(i)==True and i*i<=N:
+                count=count+1
+                if i*i>N:
+                    break
+        return count
+        
+        import math
+def prime(x):
+    if x==2:
+        return True
+    for i in range(2,int(math.sqrt(x))+1):
+        if x%i==0:
+            return False
+    return True
+class Solution:
+    def exactly3Divisors(self,N):
+        count=0
+        for i in range(2,int(math.sqrt(N))+1):
+            if prime(i)==True and i*i<=N:
+                count=count+1
+                if i*i>N:
+                    break
+        return count
