@@ -1,0 +1,20 @@
+class Solution{
+    public:
+    // Function to check if given number n is a power of two.
+    bool isPowerofTwo(long long n){
+        
+        // Your code here    
+        int c=0;
+        while((n)!=0){
+            if ((n & 1)==1){
+                c=c+1;}
+            n=n>>1;}
+            
+        if (c==1){
+            return 1;}
+        return 0;
+                
+        
+    }
+    //trverse the binary form and if only 1 is encountered then its a power of two else:
+    //no power of two
