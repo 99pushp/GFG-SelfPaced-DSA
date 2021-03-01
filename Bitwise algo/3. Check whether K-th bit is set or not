@@ -1,0 +1,23 @@
+3. Check whether K-th bit is set or not
+class Solution
+{
+    public:
+    bool checkKthBit(int n, int k){
+        n=n>>k;
+        if ((n&1)==0){
+            return 0;
+        }
+        return 1;
+    
+// Your code here
+// It can be a one liner logic!! Think of it!!
+//Input: N = 500, K = 3
+//Output: No
+//Explanation: Binary representation of 500 is 
+//111110100, in which 3rd bit from LSB is not set. 
+//So, return false
+//right shift by k and and with 1:
+//if result is zero return false (0)
+//if result is one return true (1)
+    }
+};
