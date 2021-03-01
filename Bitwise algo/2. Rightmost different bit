@@ -1,0 +1,28 @@
+unsigned int getFirstSetBit(int n){
+    int count=1;
+    if (n==0){
+        return 0;
+    }
+    while((1&n)!=1){
+         count++;
+         n=n>>1;
+    }
+    return count;
+    // Your code here
+}
+int posOfRightMostDiffBit(int m, int n)
+{
+    int a=m^n;
+    return getFirstSetBit(a);
+    // Your code here
+}
+the main idea here is the xor operation of the two number and the result
+the number has the one from the right side is the different bit
+and the right shift operator with the and one is used to count and shift the number towards
+the right
+Input: M = 52, N = 4
+Output: 5
+M=110100
+N=000100
+xor(m,n)=110000
+right shift and count while and with one until the result is one
