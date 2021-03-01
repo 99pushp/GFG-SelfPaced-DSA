@@ -1,0 +1,35 @@
+
+Input: N = 18
+Output: 2
+Explanation: Binary representation of 
+18 is 010010,the first set bit from the 
+right side is at position 2.
+
+while(loop 1st )
+n=18:010010
+AND
+01:000001
+00:000000
+count=2
+right shift
+n=001001
+
+
+while(loop 2nd)false=>bec
+01:000001 &001001==1
+
+so ans =2
+
+unsigned int getFirstSetBit(int n){
+    int result=0;
+    int count=1;
+    if (n==0){
+        return 0;
+    }
+    while((1&n)!=1){
+         count++;
+         n=n>>1;
+    }
+    return count;
+    // Your code here
+}
