@@ -1,0 +1,20 @@
+Just see if two or more consecutive bits are set or not using n&(n>>1)
+Right Shift the number by 1.Then, Perform the '&' operation with the original number . For sparse number the answer will be 0 otherwise 1.
+
+If we observer carefully, then we can notice that if we can use bitwise AND of binary representation of the “given number its “right shifted number”(i.e., half the given number) to figure out whether the number is sparse or not. Result of AND operator would be 0 if number is sparse and non-zero if not sparse.
+
+Photo5354-1
+class Solution{
+    public:
+    // function to check if the number is sparse
+    // n : is the number to check if it is sparse
+    bool isSparse(int n){
+        if ((n&(n>>1))==0){
+            return 1;
+        }
+        else{
+            return 0;
+        }
+        // Your code
+    }
+};
