@@ -1,0 +1,11 @@
+Input:
+n = 99999
+Output: 45
+Explanation: Sum of digit of 99999 is 45.
+
+int sumOfDigits(int n)
+{
+    //Your code here
+    if (n<=9){return n;}
+    return sumOfDigits(n/10)+(n%10);
+}
