@@ -1,0 +1,13 @@
+int sumOfDigits(int n)
+{
+    //Your code here
+    if (n<=9){return n;}
+    return sumOfDigits(n/10)+(n%10);
+}
+int digitalRoot(int n)
+{
+    //Your code here
+    int var=sumOfDigits(n);
+    if(var<=9){return var;}
+    else{digitalRoot(var);}
+}
