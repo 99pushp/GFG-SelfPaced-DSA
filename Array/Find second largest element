@@ -1,0 +1,16 @@
+class Solution:
+    def print2largest(self,l,N): 
+        #code here
+        #l=[12,12,3]
+        if(len(l)==1):
+            b=-1
+        l.sort(reverse=True)
+        #print(l)
+        a=l[0]
+        for i in range(1,len(l)):
+           if(l[i]!=a):
+              b=l[i]
+              break
+           if(i==len(l)-1 and l[i]==a):
+              b=-1
+        return b
