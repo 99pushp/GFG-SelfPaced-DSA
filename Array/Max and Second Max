@@ -1,0 +1,16 @@
+def largestAndSecondLargest(sizeOfArray, arr):
+    lar=arr[0]
+    sec=-1
+    for i in range (0,len(arr)):
+        if arr[i]>lar:
+            sec=lar
+            lar=arr[i]
+        
+        if arr[i]<lar:
+            if arr[i]>sec:
+                sl=arr[i]
+    li=[lar,sec]
+            
+    return li
+
+print(largestAndSecondLargest(5,[1,24,24,34,34,34,3,2]))
