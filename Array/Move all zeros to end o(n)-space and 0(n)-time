@@ -1,0 +1,12 @@
+l=[3,5,0,0,4]
+space=[]
+x=0
+for i in l:
+    if i!=0:
+        space.append(i)
+    else:
+        x=x+1
+
+for i in range(0,x):
+    space.append(0)
+print(space)
