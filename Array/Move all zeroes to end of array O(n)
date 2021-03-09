@@ -1,0 +1,12 @@
+class Solution:
+	def pushZerosToEnd(self,arr, n):
+    	# code here
+    	count=0
+    	for i in range(0,n):
+    	    if(arr[i]!=0):
+    	        t=arr[i]
+    	        arr[i]=arr[count]
+    	        arr[count]=t
+    	        count=count+1
+    	return arr
+    	        
