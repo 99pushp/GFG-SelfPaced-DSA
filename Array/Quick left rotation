@@ -1,0 +1,24 @@
+def reverse(arr,start,end):
+       while(end>start):
+         t=arr[start]
+         arr[start]=arr[end]
+         arr[end]=t
+         end=end-1
+         start=start+1
+
+
+
+class Solution:
+
+    def leftRotate(self, arr, d, n):
+        
+        if(d>=n):
+            while(d>n):
+              d=d-n
+        if(d==0 or n==1):
+            return arr
+        
+        reverse(arr,0,d-1)
+        reverse(arr,d,n-1)
+        return(reverse(arr,0,n-1))
+        
