@@ -1,0 +1,23 @@
+Input:
+n = 5
+arr[] = {1,2,3,4,5}
+Output: 2 1 4 3 5
+Explanation: Array elements after 
+sorting it in wave form are 
+2 1 4 3 5.
+def reverse(s,e,arr,N):
+    t=arr[e]
+    arr[e]=arr[s]
+    arr[s]=t
+        
+
+class Solution:
+    #Complete this function
+    #Function to sort the array into a wave-like array.
+    def convertToWave(self,A,N):
+        i=0
+        for i in range(0,N-1,i+2):
+            reverse(i,i+1,A,N)
+        return A
+        
+ https://practice.geeksforgeeks.org/problems/wave-array-1587115621/0/?track=DSASP-Arrays&batchId=154#
