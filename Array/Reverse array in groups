@@ -1,0 +1,21 @@
+def reverse(s,e,arr,N,K):
+    while s<=e:
+        t=arr[e]
+        arr[e]=arr[s]
+        arr[s]=t
+        s=s+1
+        e=e-1
+class Solution:	
+    #Function to reverse every sub-array group of size k.
+	def reverseInGroups(self, arr, N, K):
+	    i=0
+	    for i in range (0,N,i+K):
+	        if (i+K-1)<N:
+	            reverse(i,i+K-1,arr,N,K)
+	        else:
+	            reverse(i,N-1,arr,N,K)
+	    return arr
+
+	        
+		# code here
+		'''here we are reversing by grouping the elements within the range without using extra space'''
