@@ -1,0 +1,17 @@
+int maxEvenOdd(int arr[], int n) 
+{ 
+   //Your code here
+   int count=1;
+   int result=1;
+   for(int i=1;i<n;i++){
+       if((arr[i-1]%2==0 && arr[i]%2!=0)||(arr[i]%2==0 && arr[i-1]%2!=0)){
+           count++;
+           result=max(result,count);
+       }
+       else{
+          // result=max(result,count);
+           count=1;
+       }
+   }
+   return result;
+} 
