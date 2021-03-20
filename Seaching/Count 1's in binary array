@@ -1,0 +1,23 @@
+
+def lastocuurence(arr,n,x):
+    high=n-1
+    low=0
+    while low<=high:
+        mid=int((high+low)/2)
+        if x>arr[mid]:
+            low=mid+1
+        if x<arr[mid]:
+            high=mid-1
+        if x==arr[mid]:
+            if mid==n-1:
+                return mid
+            if arr[mid+1]!=arr[mid]:
+                return mid
+            else:
+                low=mid+1
+    return -1
+class Solution:
+    ##Complete this code
+    def countOnes(self,arr, n):
+        return n-lastocuurence(arr[::-1],n,0)-1
+        #Your code here
