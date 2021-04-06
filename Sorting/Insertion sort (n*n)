@@ -1,0 +1,28 @@
+<link of problem>
+https://practice.geeksforgeeks.org/problems/selection-sort/1#
+
+def select( arr, start_index):
+        # code here 
+        minimum=100000000
+        end_index=len(arr)
+        for index in range (start_index,end_index):
+            if arr[index]<minimum:
+                minimum=arr[index]
+        for x in range(start_index,end_index):
+            if arr[x]==minimum:
+                return x
+        
+        
+    
+def selectionSort( arr,n):
+        #code here
+    for i in range (0,n):
+        x=select(arr,i)
+        print(x)
+        temp=arr[x]
+        arr[x]=arr[i]
+        arr[i]=temp
+    print (arr)
+    
+selectionSort(arr,n)
+            
