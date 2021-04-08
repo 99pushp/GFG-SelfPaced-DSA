@@ -1,0 +1,8 @@
+def MissingNumber(arr,n):
+    # code here
+    nnn=len(arr)+1
+    #print((n*(n+1))/2)
+    #print(sum(arr))
+    return(int((((nnn*(nnn+1))/2)-sum(arr))))
+    
+    https://practice.geeksforgeeks.org/problems/missing-number-in-array1416/1
