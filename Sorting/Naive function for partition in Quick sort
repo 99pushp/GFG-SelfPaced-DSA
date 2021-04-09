@@ -1,0 +1,17 @@
+a=[5,13,6,9,12,11,8]
+p=a[len(a)-4]
+l=[]
+print(p)
+for i in range (0,len(a)):
+    if a[i]<p:
+        l.append(a[i])
+for i in range (0,len(a)):
+    if a[i]==p:
+        l.append(a[i])
+
+for i in range (0,len(a)):
+    if a[i]>p:
+        l.append(a[i])
+
+print(l)
+        
