@@ -1,0 +1,32 @@
+def check(val,s,ret):
+    if val not in s:
+        ret.append(val)
+        s.add(val)
+class Solution:
+    
+    #Function to return a list containing the union of the two arrays.
+    def mergeArrays(self,a,b,n,m):
+       p1=0
+       p2=0
+       ret=[]
+       s=set()
+       while p1<n or p2<m:
+           if p1<n and p2<m:
+               if a[p1]==b[p2]:
+                   check(a[p1],s,ret)
+                   p1+=1
+                   p2+=1
+               elif a[p1]<b[p2]:
+                   check(a[p1],s,ret)
+                   p1+=1
+               else:
+                   check(b[p2],s,ret)
+                   p2+=1
+           elif p1<n:
+              check(a[p1],s,ret)
+              p1+=1
+           else:
+              check(b[p2],s,ret)
+              p2+=1
+       return ret
+        
