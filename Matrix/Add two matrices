@@ -1,0 +1,22 @@
+import numpy as np
+class Solution:
+ 
+    #Function to add two matrices.
+    def sumMatrix(self,A,B):
+        
+        x=[]
+        if len(A) != len(B):
+            return x
+        
+        for i in range (0,len(A)):
+            if len(A[i])!=len(B[i]):
+                return x
+        
+        
+        
+        for i in range (0,len(A)) :
+            for j in range (0,len(A[i])):
+                A[i][j]=A[i][j]+B[i][j]
+        C=A
+        return C
+        https://practice.geeksforgeeks.org/problems/adding-two-matrices3512/1/?track=DSASP-Matrix&batchId=154#
