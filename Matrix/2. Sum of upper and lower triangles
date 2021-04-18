@@ -1,0 +1,12 @@
+def sumTriangles(self,matrix, n):
+        rows=len(matrix)
+        cols=len(matrix[0])
+        ut=0
+        lt=0
+        for i in range (0,rows):
+            for j in range (0,cols):
+                if j>=i:
+                    ut=ut+matrix[i][j]
+                if i>=j:
+                    lt=lt+matrix[i][j]
+        return [ut,lt]
