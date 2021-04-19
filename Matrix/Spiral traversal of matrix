@@ -1,0 +1,44 @@
+
+    def spirallyTraverse(self,m, r, c): 
+        sr=0
+        sc=0
+        l=[]
+    #for i in range(sr,sr+1):#
+    
+        while c>sc and r>sr:
+    
+           for j in range (sc,c):
+              i=sr
+              if m[i][j] !=-1:
+                 l.append(m[i][j])
+                 m[i][j]=-1
+    
+           for i in range(sr+1,r):
+        #for j in range(c-1,c):#
+              j=c-1
+              if m[i][j] !=-1:
+                 l.append(m[i][j])
+                 m[i][j]=-1
+    
+    #for i in range(r-1,r):#
+           for j in range(c-2,sc-1,-1):
+              i=r-1
+              if m[i][j] != -1:
+                 l.append(m[i][j])
+                 m[i][j]=-1
+    
+           for i in range (r-2,sr,-1):
+        #for j in range(sc,sc+1):
+              j=sc
+              if m[i][j] != -1:
+                l.append(m[i][j])
+                m[i][j]=-1
+    
+        
+           r=r-1
+           c=c-1
+           sr=sr+1
+           sc=sc+1
+        # code here 
+        return l
+      
