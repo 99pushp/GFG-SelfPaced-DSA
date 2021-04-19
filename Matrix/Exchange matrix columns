@@ -1,0 +1,14 @@
+ 
+    #Function to exchange first column of a matrix with its last column.
+    def exchangeColumns(self,a):
+        n=len(a)
+        m=len(a[0])
+        i=0
+        l=m-1
+        for j in range (0,n):
+            temp=a[j][0]
+            a[j][0]=a[j][l]
+            a[j][l]=temp
+            
+            
+        return a
