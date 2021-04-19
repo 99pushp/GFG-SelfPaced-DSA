@@ -1,0 +1,16 @@
+ #Function to rotate matrix anticlockwise by 90 degrees.
+    def rotateby90(self,matrix, n): 
+        for i in range(0,n):
+            for j in range (0,n):
+                if j>i:
+                    temp=matrix[i][j]
+                    matrix[i][j]=matrix[j][i]
+                    matrix[j][i]=temp
+                    
+        for col in range(0,n):
+            for row in range(0,int(n/2)):
+                x=n-row-1
+                temp=matrix[row][col]
+                matrix[row][col]=matrix[x][col]
+                matrix[x][col]=temp
+        return matrix
