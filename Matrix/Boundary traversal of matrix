@@ -1,0 +1,47 @@
+ #Function to return list of integers that form the boundary 
+    #traversal of the matrix in a clockwise manner.
+    def BoundaryTraversal(self,matrix, n, m):
+        
+        
+        
+        l=[]
+        a=0
+        b=m
+        if n==1:
+            for j in range(0,b):
+                l.append(matrix[a][j])
+            return l
+        
+        if m==1:
+            c=0
+            for x in range(0,n):
+                l.append(matrix[x][c])
+            return l
+                
+        else:        
+                a=0
+                b=m
+            
+                for j in range(0,b):
+                    l.append(matrix[a][j])
+                    
+                        
+                
+                a=a+1
+                b=b-1
+                for i in range(a,n):
+                    l.append(matrix[i][b])
+                    
+            
+                b=b-1
+                a=n-1
+                for j in range(b,-1,-1):
+                    l.append(matrix[a][j])
+                
+                b=0
+                a=a-1
+                for i in range(a,0,-1):
+                    l.append(matrix[i][b])
+                    
+                return l
+            
