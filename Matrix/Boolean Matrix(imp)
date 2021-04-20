@@ -1,0 +1,28 @@
+def booleanMatrix(matrix):
+    # code here 
+    r=len(matrix)
+    c=len(matrix[0])
+    R=[]
+    C=[]
+    for i in range (0,r):
+        R.append(0)
+    for i in range (0,c):
+        C.append(0)
+    
+    for i in range(0,r):
+        for j in range(0,c):
+            if matrix[i][j]==1:
+                R[i]=1
+                C[j]=1
+                
+                
+    for i in range(0,r):
+        if R[i]==1:
+            for x in range(0,c):
+                matrix[i][x]=1
+    
+    for i in range (0,c):
+        if C[i]==1:
+            for x in range(0,r):
+                matrix[x][i]=1
+    return matrix
