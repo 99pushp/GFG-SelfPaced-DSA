@@ -1,0 +1,22 @@
+def binary(l,x):
+    s=0
+    e=len(l)-1
+    while(s<=e):
+        mid=(s+e)//2
+        if x==l[mid]:return 1
+        elif l[mid]<x:s=mid+1
+        else : e=mid-1
+        
+    return -1
+class Solution:
+    
+    #Function to search a given number in row-column sorted matrix.
+    def search(self,matrix, n, m, x): 
+        l=[]
+        for i in range(0,n):
+            if x>=matrix[i][0] and x<=matrix[i][m-1]:
+                for r in range(0,m):
+                    l.append(matrix[i][r])
+                ans=binary(l,x)
+                if ans==1:return 1
+        return 0
