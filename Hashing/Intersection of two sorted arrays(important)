@@ -1,0 +1,54 @@
+
+#include <iostream>
+#include <map>
+using namespace std;
+
+int NumberofElementsInIntersection (int a[], int b[], int n, int m )
+    {
+        // Your code goes here
+        map<int,int>hmapa;
+        map<int,int>hmapb;
+        for(int i=0;i<n;i++){
+            hmapa[a[i]]++;
+        }
+        for(int i=0;i<m;i++){
+            hmapb[b[i]]++;
+        }
+    
+       // cout<<"a"<<endl;
+       // for(auto it:hmapa){
+       //     cout<<it.first<<":"<<it.second<<endl;
+       // }
+       // cout<<"b"<<endl;
+       // for(auto itb:hmapb){
+       //    cout<<itb.first<<":"<<itb.second<<endl;
+       // }
+        int count=0;
+        if(hmapa.size()>=hmapb.size()){
+            
+            for(auto ita:hmapa){
+                if(hmapb.count(ita.first)==1){count++;}
+            }
+            
+        }
+        else{
+           
+            for(auto itb:hmapb){
+                if(hmapa.count(itb.first)==1){count++;}
+            }
+        }
+        return count;
+    }
+int main()
+{
+    //the intersection of two arrays.
+    int a[5]={89, 24, 75, 11, 23};
+    int n=5;
+    int b[7]={89,24,11,3,4,5,89};
+    int m=7;
+    int x=NumberofElementsInIntersection(a,b,n,m);
+    cout<<x;
+    
+
+    return 0;
+}
