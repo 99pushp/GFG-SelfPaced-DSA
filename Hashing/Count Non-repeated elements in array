@@ -1,0 +1,27 @@
+int countNonRepeated(int arr[], int n)
+    {
+        //Your code here
+        unordered_map<int,int> hmap;
+        for(int i=0;i<n;i++){
+            hmap[arr[i]]=hmap[arr[i]]+1;
+        }
+        int count=0;
+        for(auto it:hmap){
+            if (it.second==1){count++;}
+        }
+    
+        return count;
+        
+    }
+    Input:
+10
+1 1 2 2 3 3 4 5 6 7
+
+Output: 
+4
+
+Explanation: 
+4, 5, 6 and 7 are the 
+elements with frequency 1 and rest 
+elements are repeated so the number 
+of non-repeated elements are 4.
