@@ -1,0 +1,19 @@
+ bool isAnagram(string a, string b){
+        
+        // Your code here
+        map<int,int>aa;
+        map<int,int>bb;
+        for(int i=0;i<a.length();i++){
+            aa[int(a[i])]++;
+        }
+        for(int i=0;i<b.length();i++){
+            bb[int(b[i])]++;
+        }
+        for(int i=97;i<=122;i++){
+            if(bb[i]!=aa[i]){
+                return 0;
+            }
+        }
+        
+        return 1;
+    }
