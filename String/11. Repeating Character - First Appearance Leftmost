@@ -1,0 +1,16 @@
+int repeatedCharacter (string s) 
+    { 
+        //Your code here
+        map<int,int>hmap;
+        for(int i=0;i<s.length();i++){
+            hmap[int(s[i])]++;
+        }
+        char ss='a';
+        for(int i=0;i<s.length();i++){
+            if(hmap[int(s[i])]>1){
+                return i;
+            }
+        }
+        return -1;
+        
+    } 
