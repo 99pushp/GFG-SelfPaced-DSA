@@ -1,0 +1,13 @@
+void addNode(Node *head, int pos, int data)
+{
+   // Your code here
+   struct Node*p=head;
+   for(int i=0;i<pos;i++){
+       p=p->next;
+   }
+   struct Node* new_node=new Node(data);
+   new_node->next=p->next;
+   p->next=new_node;
+   new_node->prev=p;
+   
+}
