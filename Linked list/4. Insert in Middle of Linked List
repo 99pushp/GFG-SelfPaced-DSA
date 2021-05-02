@@ -1,0 +1,20 @@
+Node* insertInMiddle(Node* head, int x)
+{
+	// Cpde here
+	int count=0;
+	struct Node *it=head;
+	while(it->next){
+	    count++;
+	    it=it->next;
+	}
+	//cout<<count;
+	struct Node *p=head;
+	for(int i=0;i<int(count/2);i++){
+	    p=p->next;
+	}
+	struct Node *new_node=new Node(x);
+	new_node->next=p->next;
+	p->next=new_node;
+	//new_node->next=p->next;
+	return head;
+}
