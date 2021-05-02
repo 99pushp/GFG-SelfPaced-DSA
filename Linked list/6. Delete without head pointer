@@ -1,0 +1,14 @@
+class Solution
+{
+    public:
+    //Function to delete a node without any reference to head pointer.
+    
+    void deleteNode(Node *node)
+{
+   // Your code here
+   struct Node *p=node;
+   p->data=p->next->data;
+   p->next=p->next->next;
+}
+
+};
