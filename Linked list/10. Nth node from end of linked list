@@ -1,0 +1,21 @@
+int getNthFromLast(Node *head, int n)
+{
+       // Your code here
+       struct Node*p=head;
+       struct Node*q=head;
+       int c=0;
+       while(p){
+           c++;
+           p=p->next;
+       }
+       
+       int d=c-n;
+       if(d<0){return -1;}
+       else
+      { for(int i=1;i<=d;i++){
+           q=q->next;
+       }
+       return q->data;
+      }
+       
+}
