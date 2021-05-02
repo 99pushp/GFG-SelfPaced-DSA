@@ -1,0 +1,41 @@
+class Solution{
+  public:
+    //Function to insert a node at the beginning of the linked list.
+    Node *insertAtBegining(Node *head, int x) {
+       // Your code here
+       struct Node *new_node=new Node(x);
+       new_node->next=head;
+       //new_node->data=x;
+       head=new_node;
+       return head;
+       
+    }
+    
+    
+    //Function to insert a node at the end of the linked list.
+    Node *insertAtEnd(Node *head, int x)  {
+       // Your code here
+       struct Node *last_node=head;
+       if(head==NULL){
+           struct Node *new_node=new Node(x);
+              head=new_node;
+              return head;
+       }
+       
+       
+       
+       else{
+       while(last_node->next!=NULL){
+           last_node=last_node->next;
+       }
+       struct Node *new_node=new Node(x);
+       last_node->next=new_node;
+       //new_node->next=NULL;
+      // new_node->data=x;
+       }
+       return head;
+       
+       
+       
+    }
+};
