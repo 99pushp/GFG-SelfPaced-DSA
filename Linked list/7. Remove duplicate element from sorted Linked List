@@ -1,0 +1,21 @@
+7. Remove duplicate element from sorted Linked List 
+Node *removeDuplicates(Node *root)
+{
+ // your code goes here'
+ 
+ struct Node *p=root;
+  struct Node *q=root->next;
+ 
+ while(q){
+     if(p->data == q->data){
+         p->next=q->next;
+         q=p->next;
+     }
+     else{
+         p=q;
+         q=q->next;
+     }
+ }
+ 
+ return root;
+}
