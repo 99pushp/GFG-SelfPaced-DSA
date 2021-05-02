@@ -1,0 +1,14 @@
+class Solution
+{
+    public:
+     int getCount(struct Node* head){
+
+    //Code here
+    int c=0;
+    while(head){
+        c++;
+        head=head->next;
+    }
+return c;
+}
+};
