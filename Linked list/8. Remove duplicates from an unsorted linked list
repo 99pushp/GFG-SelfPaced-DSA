@@ -1,0 +1,20 @@
+Node * removeDuplicates( Node *head) 
+{
+ // your code goes here
+ struct Node *p=head;
+ struct Node *t=head;
+ struct Node *q=head->next;
+ 
+ while(p){
+     while(q){
+         if(p->data==q->data){
+             t->next=q->next;
+             delete q;
+             q=t->next;
+         }
+         else{
+             t=q;
+             q=q->next;
+             
+         }
+     }
