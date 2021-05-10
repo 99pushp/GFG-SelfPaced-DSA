@@ -1,0 +1,26 @@
+string removePair(string str)
+    {
+        // Your code here
+        stack<char>s;
+        s.push(str[0]);
+        for(int i=1;i<str.length();i++){
+            if(s.empty() || s.top()!=str[i]){
+                s.push(str[i]);
+            }
+            else{
+                s.pop();
+            }
+            
+        }
+        if(s.size()==0){
+            return "Empty String";
+        }
+        string ans="";
+          while(!s.empty()){
+          ans=ans+s.top();
+          s.pop();
+        }
+     
+     reverse(ans.begin(),ans.end());
+     return ans;
+    }
