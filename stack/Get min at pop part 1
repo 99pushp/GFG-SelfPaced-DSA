@@ -1,0 +1,52 @@
+#include<iostream>
+#include<map>
+#include<stack>
+using namespace std;
+
+int main(){
+    int n=5;
+    int a[n]={1,2,3,4,5};
+    //1.creating a stack
+    stack <int> s;
+    for(int i=0;i<n;i++){
+        s.push(a[i]);
+        cout<<s.top()<<endl;
+    }
+    //2.creating a hash map
+    map<int,int>hmap;
+    for(int i=0;i<n;i++){
+           hmap[a[i]]++;
+    }
+    //printing in hash map
+    cout<<"hash map is as:"<<endl;
+    for(auto i : hmap){
+        cout<<i.first<<":"<<i.second<<endl;
+    }
+    //hmap.erase(2);
+    //*cout<<"erasing the second "<<endl;
+   // for(auto i : hmap){
+    //    cout<<i.first<<":"<<i.second<<endl;
+    //}
+    //cout<<hmap.empty();
+
+    for (auto it = hmap.begin();it != hmap.end(); ++it)
+        {
+            cout << it->first<<endl;
+            break;
+        } 
+    while(!s.empty()){
+        int element=s.top();
+        hmap[element]--;
+        if(hmap[element]==0){
+            hmap.erase(element);
+        }
+        //print the first of the hmap
+        for (auto it = hmap.begin();it != hmap.end(); ++it)
+        {
+            cout << it->first<<endl;
+            break;
+        }
+        s.pop();
+    }
+
+}
