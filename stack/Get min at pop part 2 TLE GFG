@@ -1,0 +1,51 @@
+stack<int> _push(int a[],int n)
+{
+   // your code here
+   stack <int> s;
+    for(int i=0;i<n;i++){
+        s.push(a[i]);
+    }
+    map<int,int>hmap;
+    for(int i=0;i<n;i++){
+           hmap[a[i]]++;
+    }
+    stack <int> ans;
+    for (auto it = hmap.begin();it != hmap.end(); ++it)
+        {
+            s.push(it->first);
+            break;
+        } 
+    while(!s.empty()){
+        int element=s.top();
+        hmap[element]--;
+        if(hmap[element]==0){
+            hmap.erase(element);
+        }
+        //print the first of the hmap
+        for (auto it = hmap.begin();it != hmap.end(); ++it)
+        {
+            s.push(it->first);
+            break;
+        }
+        s.pop();
+    }
+    return ans;
+}
+
+//Function to print minimum value in stack each time while popping.
+void _getMinAtPop(stack<int>ans)
+{
+    // your code here
+    int N=ans.size();
+    int arr[N];
+    int i=0;
+    while(!ans.empty()) {
+        arr[i]= ans.top();
+        i++;
+        ans.pop();
+    }
+        for(int i=N-1;i>-1;i--){
+            cout<<arr[i]<<" ";
+        }
+    
+}
