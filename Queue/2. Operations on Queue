@@ -1,0 +1,22 @@
+    
+    def enqueue(self,queue, x):
+# code here
+        queue.append(x)
+
+    def find(self,queue, x):
+    # code here
+        re=False
+        for i in queue:
+            if(i==x):
+                re=True
+                break
+            
+        return re
+    
+    def front(self,queue):
+    # code here
+        return queue[0]
+    
+    def dequeue(self,queue):
+    # code here
+        return queue.pop(0)
