@@ -1,0 +1,20 @@
+lists=[]
+def traversal(root):
+    if root==None:return
+    traversal(root.left)
+    traversal(root.right)
+    lists.append(root.data)
+    
+class Solution:
+    def findMax(self,root):
+        traversal(root)
+        maxx=max(lists)
+        lists.clear()
+        traversal(root)
+        return maxx
+        #code here
+    def findMin(self,root):
+        traversal(root)
+        minn=min(lists)
+        lists.clear()
+        return minn
