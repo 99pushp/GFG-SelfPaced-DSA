@@ -1,0 +1,14 @@
+lists=[]
+def traverse_count(node):
+    if node==None:return
+    else:
+        lists.append(node.data)
+        traverse_count(node.left)
+        traverse_count(node.right)
+        
+
+def getSize(node):
+    traverse_count(node)
+    ans=len(lists)
+    lists.clear()
+    return ans
