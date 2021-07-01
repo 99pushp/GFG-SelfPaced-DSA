@@ -1,0 +1,40 @@
+class Solution{
+    public:
+    
+    int preIndex;
+Node* buildTreeUtil(int in[],int pre[],int is,int ie)
+{
+    // static int preIndex=0;
+    
+      if(is>ie)
+      return NULL;
+     
+    Node * root = new Node(pre[preIndex++]);
+    
+     if(is==ie)
+     return root;
+     
+    int inIndex;
+    
+    for(int i=is;i<=ie;i++)
+    {
+     if(in[i]==root->data)
+      {
+        inIndex = i;
+        break;
+      }
+    }
+    root->left = buildTreeUtil(in,pre,is,inIndex-1);
+    root->right = buildTreeUtil(in,pre,inIndex+1,ie);
+    
+    return root;
+}
+
+Node* buildTree(int in[],int pre[], int n)
+{
+   preIndex=0;
+   Node* root = buildTreeUtil(in,pre,0,n-1);
+   
+   return root;
+}
+};
