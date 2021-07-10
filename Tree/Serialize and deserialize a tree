@@ -1,0 +1,56 @@
+
+class Solution
+{
+    public:
+    const int EMPTY = -1;
+    
+    void Serialize(Node *root, vector<int> &v)
+    {
+        if(root == NULL)
+        {
+            v.push_back(EMPTY);
+            return ;
+        }
+        
+         v.push_back(root->data);
+        
+         Serialize(root->left, v); 
+         Serialize(root->right, v); 
+        
+       
+    }
+    
+    
+    vector<int> serialize(Node *root) 
+    {
+        vector<int> v;
+        Serialize(root, v);
+        return v;
+    }
+    
+  
+    Node *deserialize(vector<int> &A, int &index)
+    {
+        // it should be index==A.size()
+       if(index == A.size())
+      {
+          return NULL;
+      }
+      
+      int val = A[index];
+      index++;
+      if(val == EMPTY)
+      {
+          return NULL;
+      }
+      Node *root = new Node(val);
+      root->left = deserialize(A, index);
+      root->right = deserialize(A, index);
+      return root;
+    } 
+    
+    Node *deSerialize(vector<int> &A)
+    {
+        int index = 0;
+        return deserialize(A, index);
+    }  
