@@ -1,0 +1,17 @@
+int minValue(Node* root)
+{
+    
+    int ans;
+    // Code here
+    if(root==NULL){
+        return -1;
+    }
+    else{
+         ans=root->data;
+        while(root->left!=NULL){
+            root=root->left;
+            ans=root->data;
+        }
+    }
+    return ans;
+}
