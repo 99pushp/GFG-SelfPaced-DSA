@@ -1,0 +1,29 @@
+int floor(Node* root, int key) 
+{ 
+	// Your code goes here
+	 int answer=-1;
+	inorderTraversal(root);
+	if(ans.size()==0 ||ans[0]>key){
+	    return -1;
+	}
+	else{
+	   
+	    int diff=93493493;
+	    for(int i=0;i<ans.size();i++){
+	        if(ans[i]<=key){
+	            if(key-ans[i]<diff){diff=key-ans[i];answer=ans[i];}
+	        }
+	        else{
+	            break;
+	        }
+	    }
+	}
+	//cout<<"the vector is"<<endl;
+	//for(int i=0;i<ans.size();i++){
+	//    cout<<ans[i]<<endl;
+	//}
+	//	cout<<"the vector end is"<<endl;
+	//ans.clear();
+	return answer;
+
+}
