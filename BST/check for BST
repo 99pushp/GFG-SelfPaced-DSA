@@ -1,0 +1,36 @@
+class Solution
+{
+    public:
+    //Function to check whether a Binary Tree is BST or not.
+    
+    vector<int>vec;
+    void inorder(Node *root){
+        if(root==NULL){
+            return;
+        }
+        else{
+        inorder(root->left);
+        vec.push_back(root->data);
+        inorder(root->right);
+        }
+    }
+    bool checkSort(vector<int>v){
+        for(int i=0;i<v.size()-1;i++){
+            if(v[i]==v[i+1]){
+                return 0;
+            }
+        }
+       return is_sorted(v.begin(), v.end());
+    }
+    bool isBST(Node* root) 
+    {
+        // Your code here
+        if(root==NULL){
+            return 0;
+        }
+        else{
+        inorder(root);
+        return checkSort(vec);}
+        
+    }
+};
