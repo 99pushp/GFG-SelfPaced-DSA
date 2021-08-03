@@ -1,0 +1,24 @@
+vector<int>ans;
+void inorder(Node *root,int l,int h){
+    if(root==NULL){
+        return ;
+    }
+    else{
+    inorder(root->left,l,h);
+    if(root->data>=l && root->data<=h)
+    {ans.push_back(root->data);}
+    inorder(root->right,l,h);
+    }
+}
+class Solution {
+  public:
+    vector<int> printNearNodes(Node *root, int low, int high) {
+        //code here  
+        inorder(root,low,high);
+        for(int i=0;i<ans.size();i++){
+            cout<<ans[i]<<" ";
+        }
+        ans.clear();
+        return ans;
+    }
+};
