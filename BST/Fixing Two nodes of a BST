@@ -1,0 +1,119 @@
+
+vector<int>io;vector<int>inc;
+void pinorder(struct Node *root){
+    if(root==NULL){
+        return;
+    }
+    else{
+        pinorder(root->left);
+        cout<<(root->data)<<" ";
+        pinorder(root->right);
+    }
+}
+void inorder(struct Node *root){
+    if(root==NULL){
+        return;
+    }
+    else{
+        inorder(root->left);
+        io.push_back(root->data);
+        inorder(root->right);
+    }
+}
+
+void inOrder(struct Node *root,int a,int b)
+{
+    stack<Node *> s;
+    Node *curr = root;
+ 
+    while (curr != NULL || s.empty() == false)
+    {
+        /* Reach the left most Node of the
+           curr Node */
+        while (curr !=  NULL)
+        {
+            /* place pointer to a tree node on
+               the stack before traversing
+              the node's left subtree */
+            s.push(curr);
+            curr = curr->left;
+        }
+ 
+        /* Current must be NULL at this point */
+        curr = s.top();
+        s.pop();
+ 
+       // cout << curr->data << " ";
+       if(curr->data==a){curr->data=b;}
+       //if(curr->data==b){curr->data=a;}
+ 
+        /* we have visited the node and its
+           left subtree.  Now, it's right
+           subtree's turn */
+        curr = curr->right;
+ 
+    } /* end of while */
+}
+void inOrder2(struct Node *root,int a,int b)
+{
+    stack<Node *> s;
+    Node *curr = root;
+ 
+    while (curr != NULL || s.empty() == false)
+    {
+        /* Reach the left most Node of the
+           curr Node */
+        while (curr !=  NULL)
+        {
+            /* place pointer to a tree node on
+               the stack before traversing
+              the node's left subtree */
+            s.push(curr);
+            curr = curr->left;
+        }
+ 
+        /* Current must be NULL at this point */
+        curr = s.top();
+        s.pop();
+ 
+       // cout << curr->data << " ";
+       //if(curr->data==a){curr->data=b;}
+       if(curr->data==b){curr->data=a;return;}
+          
+        /* we have visited the node and its
+           left subtree.  Now, it's right
+           subtree's turn */
+        curr = curr->right;
+ 
+    } /* end of while */
+}
+class Solution {
+  public:
+    void correctBST( struct Node* root )
+    {
+        // add code here.
+        
+        int a;int b;
+        inc.clear();
+        io.clear();
+        
+        inorder(root);
+        inc=io;
+        sort(inc.begin(),inc.end());
+        for(int i=0;i<io.size();i++){
+            if(inc[i]!=io[i]){
+                a=inc[i];
+                b=io[i];
+        break;
+            }
+        }
+        //cout<<a<<" "<<b<<" ";
+        //minorder(root,a,b);
+        //minorder2(root,a,b);
+        inOrder(root,a,b);
+        inOrder2(root,a,b);
+       // pinorder(root);
+        
+        
+    }
+};
