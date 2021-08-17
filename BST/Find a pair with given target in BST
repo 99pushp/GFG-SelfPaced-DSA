@@ -1,0 +1,49 @@
+vector<int> t;
+void inOrder(struct Node *root){
+    if(root==NULL){
+        return;
+    }
+    else{
+        inOrder(root->left);
+        t.push_back(root->data);
+        inOrder(root->right);
+    }
+}
+
+class Solution{
+  public:
+    // root : the root Node of the given BST
+    // target : the target sum
+    int isPairPresent(struct Node *root, int target)
+    {
+        t.clear();
+        inOrder(root);
+        int i = 0;
+        int j = t.size()-1;
+    
+ 
+    // represents second pointer
+    
+ 
+    while (i < j) {
+ 
+        // If we find a pair
+        if (t[i] + t[j] == target)
+            return 1;
+ 
+        // If sum of elements at current
+        // pointers is less, we move towards
+        // higher values by doing i++
+        else if (t[i] + t[j] < target)
+            i++;
+ 
+        // If sum of elements at current
+        // pointers is more, we move towards
+        // lower values by doing j--
+        else
+            j--;
+    }
+    //add code here.
+    return 0;
+    }
+};
