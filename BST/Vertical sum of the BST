@@ -1,0 +1,23 @@
+
+void verticalSumUtil(Node* root,map<int,int> &m,int id)
+{
+if(root==NULL) return;
+m[id]+=root->data;
+verticalSumUtil(root->left,m,id-1);
+verticalSumUtil(root->right,m,id+1);
+}
+class Solution{
+  public:
+    vector <int> verticalSum(Node *root) {
+        // add code here.
+        map<int,int> m;
+vector<int> v;
+verticalSumUtil(root,m,0);
+map<int,int>::iterator it;
+for(it=m.begin();it!=m.end();it++)
+{
+v.push_back(it->second);
+}
+return v;
+    }
+};
