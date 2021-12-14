@@ -1,0 +1,19 @@
+
+int length(struct Node*head){
+   int c=0;
+   while(head->next){
+       c++;
+       head=head->next;
+   }return c;
+}
+int fractional_node(struct Node *head, int k)
+{
+   int n=length(head);
+   int m=ceil(n/k);
+   int count=0;
+   while(count<m){
+       count++;
+       head=head->next;
+       
+   }return head->data;
+}
